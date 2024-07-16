@@ -23,6 +23,7 @@ Two AWS servers were configured for this project:
 
 ![images/aws_configuration.png](images/aws_configuration.png)
 
+ ![images/jenkins_server_configuration.png](images/jenkins_server_configuration.png)
 ## GitHub Webhook Configuration
 
 GitHub webhooks are configured to trigger Jenkins jobs whenever new code is pushed to the repository. This initiates the CI/CD pipeline for building, testing, and deploying the application.
