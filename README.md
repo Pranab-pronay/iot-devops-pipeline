@@ -1,97 +1,111 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/uOGov04c)
-# Programming the IoT - Java Components
-This is the source repository for the Java components related to my Programming the Internet of Things book and Connected Devices IoT course. These are shell wrappers ONLY and are not a solution set (which is a separate repository, not yet released). For convenience to the reader, some basic functionality has already been implemented (such as configuration logic, consts, interfaces, a simple certificate file load utility, and test cases).
+# DevOps Orchestration for IoT Application
 
-The code in this repository is largely comprised of shell classes that are designed to be implemented by the reader and are NOT solutions. These shell classes and their relationships respresent a notional design that aligns with the requirements listed in [Programming the IoT Requirements](https://github.com/orgs/programming-the-iot/projects/1). These requirements encapsulate the programming exercises presented in my book [Programming the Internet of Things: An Introduction to Building Integrated, Device to Cloud IoT Solutions](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401).
+This repository contains the CI/CD pipeline setup and configurations used for the IoT application from the "Programming the IoT" book. The project demonstrates continuous integration, automated testing, and deployment using various DevOps tools and practices. This example is designed to help others learn about CI/CD pipelines and DevOps orchestration.
 
-## Links, Exercises, Updates, Errata, and Clarifications
+## Project Overview
 
-Please see the following links to access exercises, errata / clarifications, and the e-book:
- - [Programming the IoT Kanban Board](https://github.com/orgs/programming-the-iot/projects/1)
- - [Errata and Clarifications](https://labbenchstudios.com/programming-the-iot-book/programming-the-iot-1st-edition/)
- - [Programming the Internet of Things Book](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401/)
+The main objective of this project was to implement a robust DevOps environment to enhance collaboration between development, quality assurance (QA), and operations teams. The CI/CD pipeline ensures that new features are smoothly integrated and deployed with high reliability.
 
-## How to use this repository
-If you're reading [Programming the Internet of Things: An Introduction to Building Integrated, Device to Cloud IoT Solutions](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401), you'll see a tie-in with the exercises described in each chapter and this repository. Most of the code in the main src tree is NOT implemented by design. It's intended for you - as the reader of my book (and possibly a student in one of my IoT courses) - to implement by filling in the implementation details as you work through each exercise.
+## DevOps Architecture
 
-A solution set is available, although I haven't yet released it. Stay tuned for updates on this topic.
+![images/devops_architecture.png](images/devops_architecture.png)
 
-## This repository aligns to exercises in Programming the Internet of Things
-These components are all written in Java 11 (or higher), and correlate to the exercises designed for the Gateway Device Application (GDA) specified in my book [Programming the Internet of Things: An Introduction to Building Integrated, Device to Cloud IoT Solutions](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401).
+This architecture illustrates the flow of code through the CI/CD pipeline, utilizing tools such as GitHub, Jenkins, Maven, Docker, and AWS. The pipeline is triggered by code changes in GitHub, followed by automated building, testing, and deployment of the application on AWS servers.
 
-## How to navigate the directory structure for this repository
-This repository is comprised of the following top level paths:
-- [config](https://github.com/programming-the-iot/java-components/tree/default/config): Contains basic configuration file(s).
-- [src](https://github.com/programming-the-iot/java-components/tree/default/src): Contains the following source trees:
-  - [src/main/java](https://github.com/programming-the-iot/java-components/tree/default/src/main/java): The main source tree for java-components. Keep in mind that most of these classes are shell representations ONLY and must be implemented as part of the exercises referenced above.
-  - [src/test/java](https://github.com/programming-the-iot/java-components/tree/default/src/test/java): The test source tree for java-components. These are designed to perform very basic unit and integration testing of the implementation of the exercises referenced above. This tree is sectioned by part - part01, part02, part03, and part04 - which correspond to the structure of Programming the Internet of Things.
+## AWS Server Configuration
 
-Here are some other files at the top level that are important to review:
-- [pom.xml](https://github.com/programming-the-iot/java-components/blob/default/pom.xml): The Maven project configuration file, with relevant depedencies, etc.
-- [README.md](https://github.com/programming-the-iot/java-components/blob/default/README.md): This README.me file.
-- [LICENSE](https://github.com/programming-the-iot/java-components/blob/default/LICENSE): The repository's LICENSE file.
+Two AWS servers were configured for this project:
 
-Lastly, here are some 'dot' ('.{filename}') files pertaining to dev environment setup that you may find useful (or not - if so, just delete them after cloning the repo):
-- [.classpath](https://github.com/programming-the-iot/java-components/blob/default/.classpath): The Eclipse IDE CLASSPATH configuration file for your Java environment that may / may not be useful for your own cloned instance.
-- [.gitignore](https://github.com/programming-the-iot/java-components/blob/default/.gitignore): The obligatory .gitignore that you should probably keep in place, with any additions that are relevant for your own cloned instance.
-- [.project](https://github.com/programming-the-iot/java-components/blob/default/.project): The Eclipse IDE project configuration file that may / may not be useful for your own cloned instance. Note that using this file to help create your Eclipse IDE project will result in the project name 'piot-java-components' (which can be changed, of course).
-- [.settings/org.eclipse.jdt.core.prefs](https://github.com/programming-the-iot/java-components/blob/default/.settings/org.eclipse.jdt.core.prefs): The Eclipse IDE settings file, which is only included to assist with setting up an Eclipse dev environment related to my IoT courses and book exercises, which may / may not be useful for your own cloned instance.
+1. **Jenkins Server**: Used for CI/CD orchestration.
+    - Configuration: Low-config free-tier server.
+2. **Deployment Server**: Hosts Docker containers for the application.
+    - Configuration: Low-config free-tier server.
 
-NOTE: The directory structure and all files are subject to change based on feedback I receive from readers of my book and students in my IoT class, as well as improvements I find to be helpful for overall repo betterment.
+![images/aws_configuration.png](images/aws_configuration.png)
 
-# Other things to know
+## GitHub Webhook Configuration
 
-## Pull requests
-PR's are disabled while the codebase is being developed.
+GitHub webhooks are configured to trigger Jenkins jobs whenever new code is pushed to the repository. This initiates the CI/CD pipeline for building, testing, and deploying the application.
 
-## Updates
-Much of this repository, and in particular unit and integration tests, will continue to evolve, so please check back regularly for potential updates. Please note that API changes can - and likely will - occur at any time.
+![images/github_webhook.png](images/github_webhook.png)
 
-# REFERENCES
-This repository has external dependencies on other open source projects. I'm grateful to the open source community and authors / maintainers of the following libraries:
+## Jenkins Configuration
 
-Lab Module Library References (not all are required for each lab module):
+Jenkins is configured to automate the stages of the CI/CD pipeline, including:
 
-- [aws-iot-device-sdk-java](https://github.com/aws/aws-iot-device-sdk-java)
-  - Reference: AWS. AWS IoT Device SDK (Java). (2023) [Online]. Available: https://github.com/aws/aws-iot-device-sdk-java.
-- [aws-iot-device-sdk-java-samples](https://github.com/aws/aws-iot-device-sdk-java)
-  - Reference: AWS. AWS IoT Device SDK Samples (Java). (2023) [Online]. Available: https://github.com/aws/aws-iot-device-sdk-java.
-- [azure-iot-device-client](https://github.com/Azure/azure-iot-sdk-java)
-  - Reference: Microsoft. Azure IoT Device Client (Java). (2023) [Online]. Available: https://github.com/Azure/azure-iot-sdk-java.
-- [californium-core](https://github.com/eclipse/californium)
-  - Reference: Eclipse Foundation, Inc. Californium (Cf) - CoAP for Java. (2020) [Online]. Available. https://github.com/eclipse/californium.
-- [californium/scandium-core](https://github.com/eclipse/californium/tree/master/scandium-core)
-  - Reference: Eclipse Foundation, Inc. Scandium (Sc) - Security for Californium. (2021) [Online]. Available. https://github.com/eclipse/californium/tree/master/scandium-core.
-- [commons-cli](https://commons.apache.org/proper/commons-cli/)
-  - Reference: The Apache Software Foundation. Commons CLI. (2019) [Online]. Available. https://commons.apache.org/proper/commons-cli/.
-- [commons-configuration2](commons.apache.org/proper/commons-configuration/)
-  - Reference: The Apache Software Foundation. Commons Configuration 2. (2023) [Online]. Available: https://commons.apache.org/proper/commons-configuration/.
-- [org.eclipse.paho.client.mqttv3](https://www.eclipse.org/paho/)
-  - Reference: Eclipse Foundation, Inc. Eclipse Paho Java Client. (2020) [Online]. Available: https://github.com/eclipse/paho.mqtt.java.
-- [org.eclipse.paho.mqttv5.client](https://www.eclipse.org/paho/)
-  - Reference: Eclipse Foundation, Inc. Eclipse Paho Java Client. (2023) [Online]. Available: https://github.com/eclipse/paho.mqtt.java.
-- [gson](https://github.com/google/gson)
-  - Reference: Google. Gson. (2008) [Online]. Available: https://github.com/google/gson.
-- [influxdb-client-java](https://github.com/influxdata/influxdb-client-java)
-  - Reference: Influx Data, Inc. Influx DB. (2023) [Online]. Available: https://github.com/influxdata/influxdb-client-java.
-- [jakarta.mail-api](https://jakartaee.github.io/mail-api/)
-  - Reference: Eclipse Foundation, Inc. Jakarta Mail. (2023) [Online]. Available: https://github.com/jakartaee/mail-api.
-- [jedis](https://github.com/redis/jedis)
-  - Reference: J. Leibiusky. Jedis. (2020) [Online]. Available: https://github.com/redis/jedis.
-- [junit](https://github.com/junit-team/junit4/)
-  - Reference: JUnit. JUnit 4. (2020) [Online]. Available: https://junit.org/junit4/.
+1. **Maven Setup**:
+    - Installed Apache Maven 3.9.6 in Jenkins for building the Java application.
+   ![images/jenkins_configuration1.png](images/jenkins_configuration1.png)
+2. **SSH Key Generation**:
+    - Generated an SSH key pair on the Jenkins server.
+    - Added the public key to the deployment server for secure communication.
+    ![images/jenkins_configuration2.png](images/jenkins_configuration2.png)
+3. **Publish Over SSH**:
+    - Configured Jenkins to use the SSH key for deploying artifacts to the deployment server.
+   ![images/jenkins_configuration3.png](images/jenkins_configuration3.png)
+4. **Email Notification**:
+    - Configured Jenkins to send email notifications for build and deployment status using Gmail SMTP.
+   ![images/jenkins_configuration4.png](images/jenkins_configuration4.png)
 
-NOTE: This list will be updated as other libraries / dependencies are incorporated.
+      
 
-# FAQ
-For typical questions (and answers) to the repositories of the Programming the IoT project, please see the [FAQ](https://github.com/programming-the-iot/book-exercise-tasks/blob/default/FAQ.md).
+## GDA Pipeline Configuration
 
-# IMPORTANT NOTES
-This code base is under active development.
 
-If  any  code  samples  or  other  technology  this  work  contains, describes, and / or is  subject  to  open  source licenses  or  the  intellectual  property  rights  of  others,  it  is  your  responsibility  to  ensure  that  your  use thereof complies with such licenses and/or rights.
+1. **Source Code Management**:
+    - Configured Jenkins to use the `master` branch from the GitHub repository.
+    ![images/source_code_management.png](images/source_code_management.png)
+2. **Build Steps**:
+    - Executed `mvn test`, `mvn clean`, and `mvn package` to test, clean, and build the application.
+![images/build_steps.png](images/build_steps.png)
 
-# LICENSE
-Please see [LICENSE](https://github.com/programming-the-iot/java-components/blob/default/LICENSE) if you plan to use this code.
+3. **Deployment**:
+    - Used `publish over ssh` to copy the workspace to the deployment server.
+    - Ran a script to test, build, and run the Docker image on the deployment server.
+     ![images/exec_command.png](images/exec_command.png)
 
-Please refer to the referenced libraries for their respective licenses.
+   
+In the Exec command block, below script have been written to run the application in the deployment server. Build a docker image named ‘GDA’ and Run that image.
+   ```bash
+   cd /home/ubuntu/gda/
+   mvn test
+   DOCKER_IMAGE_NAME="gda"
+   DOCKER_CONTAINER_NAME="gda"
+   DOCKER_PORT_MAPPING="8041:8041"
+   DOCKER_OPTIONS="--rm -d"
+   docker ps -a | grep "${DOCKER_CONTAINER_NAME}" | awk '{print $1}' | xargs -r docker stop
+   docker ps -a | grep "${DOCKER_CONTAINER_NAME}" | awk '{print $1}' | xargs -r docker rm
+   docker build -t "${DOCKER_IMAGE_NAME}" .
+   docker run ${DOCKER_OPTIONS} --name "${DOCKER_CONTAINER_NAME}" -p "${DOCKER_PORT_MAPPING}" "${DOCKER_IMAGE_NAME}"
+  ```
+  
+
+4. **E-mail Notification**:
+    - Added the recipient email address so that developers can get notifications for every event that occurs in Jenkins.
+    ![images/email.png](images/email.png)
+
+## Docker Configuration
+
+### GDA Dockerfile
+```bash
+FROM openjdk:11
+EXPOSE 8041
+ADD target/gateway-device-app-0.0.1-jar-with-dependencies.jar gateway-device-app-0.0.1-jar-with-dependencies.jar
+WORKDIR /app
+ADD config /app/config
+ENTRYPOINT ["java", "-jar", "/gateway-device-app-0.0.1-jar-with-dependencies.jar"]
+```
+
+## Learning Outcomes
+This project showcases the implementation of a complete CI/CD pipeline using Jenkins, Docker, and AWS. It demonstrates the automation of building, testing, and deploying applications in a consistent and reproducible manner. By following this example, you can learn how to:
+
+* Configure AWS servers for Jenkins and application deployment.
+* Set up GitHub webhooks to trigger Jenkins jobs.
+* Configure Jenkins for building, testing, and deploying applications.
+* Use Docker for containerization and deployment of applications.
+* Implement a robust CI/CD pipeline to improve collaboration and accelerate development.
+* For more details, refer to the images and scripts provided in this repository.
+
+### Acknowledgements
+* "Programming the IoT" book for the project concept.
+* Jenkins, Docker, and AWS for providing the necessary tools and services.
