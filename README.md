@@ -1,27 +1,8 @@
-# Programming the IoT - Book Exercise Docs
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/uOGov04c)
+# Programming the IoT - Java Components
+This is the source repository for the Java components related to my Programming the Internet of Things book and Connected Devices IoT course. These are shell wrappers ONLY and are not a solution set (which is a separate repository, not yet released). For convenience to the reader, some basic functionality has already been implemented (such as configuration logic, consts, interfaces, a simple certificate file load utility, and test cases).
 
-If you're a student of Connected Devices, clone this repository so you can capture the documentation artifacts
-for each Lab Module exercise you'll implement as part of this course.
-
-If you're reading [Programming the Internet of Things](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401/), whether as a student of my IoT course or for fun, you can also use this repository to help track your progress with the exercises using the simple Markdown checklists provided in each sub-directory.
-
-# What You'll Find In This Project
-
-Each sub-directory maps to a specific Lab Module, which also aligns to the exercises listed in [Programming the Internet of Things](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401/).
-Within each sub-directory are the Markdown files that correlate to the documentation you can fill out related to each Chapter's exercise, as follows:
-  - CDA-REQ-CHECKLIST.md: Use this to check off the CDA-specific (Constrained Device App) exercise tasks for the named Lab Module. This file will only exist if there are CDA-specific tasks to complete.
-  - GDA-REQ-CHECKLIST.md: Use this to check off the GDA-specific (Gateway Device App) exercise tasks for the named Lab Module. This file will only exist if there are GDA-specific tasks to complete.
-  - CSF-REQ-CHECKLIST.md: Use this to check off the CSF-specific (Cloud Service Functions) exercise tasks for the named Lab Module. This file will only exist if there are CSF-specific tasks to complete.
-  - README-CDA.md: Use this to document your CDA-specific design. This file will only exist if there is CDA-specific documentation to complete.
-  - README-GDA.md: Use this to document your GDA-specific design. This file will only exist if there is GDA-specific documentation to complete.
-  - README-CSF.md: Use this to document your CSF-specific design. This file will only exist if there is CSF-specific documentation to complete.
-  - README-PROJECT-PROPOSAL.md: Use this to document your Semester Project Proposal. This file only exists as part of Lab Module 12.
-  - README-PROJECT-FINAL.md: Use this to document your Semester Project Final Write-up. This file only exists as part of Lab Module 12.
-
-If you're reading this Markdown page, you may be asking yourself, "do I need to complete this documentation?". If...
-  - You're in my Connected Devices class, yes - these are required as part of each Lab Module submission.
-  - You're reading [Programming the Internet of Things](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401/), it's completely up to you.
-  - Neither of the above apply to you, it's completely up to you.
+The code in this repository is largely comprised of shell classes that are designed to be implemented by the reader and are NOT solutions. These shell classes and their relationships respresent a notional design that aligns with the requirements listed in [Programming the IoT Requirements](https://github.com/orgs/programming-the-iot/projects/1). These requirements encapsulate the programming exercises presented in my book [Programming the Internet of Things: An Introduction to Building Integrated, Device to Cloud IoT Solutions](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401).
 
 ## Links, Exercises, Updates, Errata, and Clarifications
 
@@ -30,50 +11,87 @@ Please see the following links to access exercises, errata / clarifications, and
  - [Errata and Clarifications](https://labbenchstudios.com/programming-the-iot-book/programming-the-iot-1st-edition/)
  - [Programming the Internet of Things Book](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401/)
 
-## About the Exercises
+## How to use this repository
+If you're reading [Programming the Internet of Things: An Introduction to Building Integrated, Device to Cloud IoT Solutions](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401), you'll see a tie-in with the exercises described in each chapter and this repository. Most of the code in the main src tree is NOT implemented by design. It's intended for you - as the reader of my book (and possibly a student in one of my IoT courses) - to implement by filling in the implementation details as you work through each exercise.
 
-You can review the specific exercises for each Lab Module using the Kanban project board I setup at the following link:
-[Programming the IoT Kanban Board](https://github.com/orgs/programming-the-iot/projects/1)
+A solution set is available, although I haven't yet released it. Stay tuned for updates on this topic.
 
-Here's the breakdown of each: 
-  - [Lab Module 01: Setup](https://github.com/programming-the-iot/book-exercise-tasks/issues/167)
-  - [Lab Module 02: Create Initial Apps](https://github.com/programming-the-iot/book-exercise-tasks/issues/202)
-  - [Lab Module 03: Data Simulation](https://github.com/programming-the-iot/book-exercise-tasks/issues/170)
-  - [Lab Module 04: Hardware Emulation](https://github.com/programming-the-iot/book-exercise-tasks/issues/172)
-  - [Lab Module 05: Data Management](https://github.com/programming-the-iot/book-exercise-tasks/issues/174)
-  - [Lab Module 06: MQTT Client - CDA](https://github.com/programming-the-iot/book-exercise-tasks/issues/177)
-  - [Lab Module 07: MQTT Client - GDA](https://github.com/programming-the-iot/book-exercise-tasks/issues/180)
-  - [Lab Module 08: CoAP Server](https://github.com/programming-the-iot/book-exercise-tasks/issues/183)
-  - [Lab Module 09: CoAP Clients](https://github.com/programming-the-iot/book-exercise-tasks/issues/186)
-  - [Lab Module 10: Edge Integration](https://github.com/programming-the-iot/book-exercise-tasks/issues/189)
-  - [Lab Module 11: Cloud Integration](https://github.com/programming-the-iot/book-exercise-tasks/issues/193)
-  - [Lab Module 12: Semester Project](https://github.com/programming-the-iot/book-exercise-tasks/issues/195)
-  
-# Other Things to Know
+## This repository aligns to exercises in Programming the Internet of Things
+These components are all written in Java 11 (or higher), and correlate to the exercises designed for the Gateway Device Application (GDA) specified in my book [Programming the Internet of Things: An Introduction to Building Integrated, Device to Cloud IoT Solutions](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401).
 
-## Pull Requests
+## How to navigate the directory structure for this repository
+This repository is comprised of the following top level paths:
+- [config](https://github.com/programming-the-iot/java-components/tree/default/config): Contains basic configuration file(s).
+- [src](https://github.com/programming-the-iot/java-components/tree/default/src): Contains the following source trees:
+  - [src/main/java](https://github.com/programming-the-iot/java-components/tree/default/src/main/java): The main source tree for java-components. Keep in mind that most of these classes are shell representations ONLY and must be implemented as part of the exercises referenced above.
+  - [src/test/java](https://github.com/programming-the-iot/java-components/tree/default/src/test/java): The test source tree for java-components. These are designed to perform very basic unit and integration testing of the implementation of the exercises referenced above. This tree is sectioned by part - part01, part02, part03, and part04 - which correspond to the structure of Programming the Internet of Things.
 
-In general, PR's are disabled, at least while the codebase and documentation are being developed.
+Here are some other files at the top level that are important to review:
+- [pom.xml](https://github.com/programming-the-iot/java-components/blob/default/pom.xml): The Maven project configuration file, with relevant depedencies, etc.
+- [README.md](https://github.com/programming-the-iot/java-components/blob/default/README.md): This README.me file.
+- [LICENSE](https://github.com/programming-the-iot/java-components/blob/default/LICENSE): The repository's LICENSE file.
+
+Lastly, here are some 'dot' ('.{filename}') files pertaining to dev environment setup that you may find useful (or not - if so, just delete them after cloning the repo):
+- [.classpath](https://github.com/programming-the-iot/java-components/blob/default/.classpath): The Eclipse IDE CLASSPATH configuration file for your Java environment that may / may not be useful for your own cloned instance.
+- [.gitignore](https://github.com/programming-the-iot/java-components/blob/default/.gitignore): The obligatory .gitignore that you should probably keep in place, with any additions that are relevant for your own cloned instance.
+- [.project](https://github.com/programming-the-iot/java-components/blob/default/.project): The Eclipse IDE project configuration file that may / may not be useful for your own cloned instance. Note that using this file to help create your Eclipse IDE project will result in the project name 'piot-java-components' (which can be changed, of course).
+- [.settings/org.eclipse.jdt.core.prefs](https://github.com/programming-the-iot/java-components/blob/default/.settings/org.eclipse.jdt.core.prefs): The Eclipse IDE settings file, which is only included to assist with setting up an Eclipse dev environment related to my IoT courses and book exercises, which may / may not be useful for your own cloned instance.
+
+NOTE: The directory structure and all files are subject to change based on feedback I receive from readers of my book and students in my IoT class, as well as improvements I find to be helpful for overall repo betterment.
+
+# Other things to know
+
+## Pull requests
+PR's are disabled while the codebase is being developed.
 
 ## Updates
+Much of this repository, and in particular unit and integration tests, will continue to evolve, so please check back regularly for potential updates. Please note that API changes can - and likely will - occur at any time.
 
-Much of the tasks and issues representing requirements within this repository will continue to evolve, so you may want to check back regularly for potential updates. Please note that this repository is still under active development - you'll likely find typos and other errata.
+# REFERENCES
+This repository has external dependencies on other open source projects. I'm grateful to the open source community and authors / maintainers of the following libraries:
 
-# License
+Lab Module Library References (not all are required for each lab module):
 
-*This README.md File - Usage and License*
+- [aws-iot-device-sdk-java](https://github.com/aws/aws-iot-device-sdk-java)
+  - Reference: AWS. AWS IoT Device SDK (Java). (2023) [Online]. Available: https://github.com/aws/aws-iot-device-sdk-java.
+- [aws-iot-device-sdk-java-samples](https://github.com/aws/aws-iot-device-sdk-java)
+  - Reference: AWS. AWS IoT Device SDK Samples (Java). (2023) [Online]. Available: https://github.com/aws/aws-iot-device-sdk-java.
+- [azure-iot-device-client](https://github.com/Azure/azure-iot-sdk-java)
+  - Reference: Microsoft. Azure IoT Device Client (Java). (2023) [Online]. Available: https://github.com/Azure/azure-iot-sdk-java.
+- [californium-core](https://github.com/eclipse/californium)
+  - Reference: Eclipse Foundation, Inc. Californium (Cf) - CoAP for Java. (2020) [Online]. Available. https://github.com/eclipse/californium.
+- [californium/scandium-core](https://github.com/eclipse/californium/tree/master/scandium-core)
+  - Reference: Eclipse Foundation, Inc. Scandium (Sc) - Security for Californium. (2021) [Online]. Available. https://github.com/eclipse/californium/tree/master/scandium-core.
+- [commons-cli](https://commons.apache.org/proper/commons-cli/)
+  - Reference: The Apache Software Foundation. Commons CLI. (2019) [Online]. Available. https://commons.apache.org/proper/commons-cli/.
+- [commons-configuration2](commons.apache.org/proper/commons-configuration/)
+  - Reference: The Apache Software Foundation. Commons Configuration 2. (2023) [Online]. Available: https://commons.apache.org/proper/commons-configuration/.
+- [org.eclipse.paho.client.mqttv3](https://www.eclipse.org/paho/)
+  - Reference: Eclipse Foundation, Inc. Eclipse Paho Java Client. (2020) [Online]. Available: https://github.com/eclipse/paho.mqtt.java.
+- [org.eclipse.paho.mqttv5.client](https://www.eclipse.org/paho/)
+  - Reference: Eclipse Foundation, Inc. Eclipse Paho Java Client. (2023) [Online]. Available: https://github.com/eclipse/paho.mqtt.java.
+- [gson](https://github.com/google/gson)
+  - Reference: Google. Gson. (2008) [Online]. Available: https://github.com/google/gson.
+- [influxdb-client-java](https://github.com/influxdata/influxdb-client-java)
+  - Reference: Influx Data, Inc. Influx DB. (2023) [Online]. Available: https://github.com/influxdata/influxdb-client-java.
+- [jakarta.mail-api](https://jakartaee.github.io/mail-api/)
+  - Reference: Eclipse Foundation, Inc. Jakarta Mail. (2023) [Online]. Available: https://github.com/jakartaee/mail-api.
+- [jedis](https://github.com/redis/jedis)
+  - Reference: J. Leibiusky. Jedis. (2020) [Online]. Available: https://github.com/redis/jedis.
+- [junit](https://github.com/junit-team/junit4/)
+  - Reference: JUnit. JUnit 4. (2020) [Online]. Available: https://junit.org/junit4/.
 
- - The following files are &copy; 2020 - 2024 by [Andrew D. King](https://andyking.me)</a> and licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/ " target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0 <img height="24" style="!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img height="24" style="!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img height="24" style="!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img height="24" style="!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a>
-   - README.md
+NOTE: This list will be updated as other libraries / dependencies are incorporated.
 
-*All {prefix}-CHECKLIST.md and Additional README-{postfix}.md Files - Usage and License*
+# FAQ
+For typical questions (and answers) to the repositories of the Programming the IoT project, please see the [FAQ](https://github.com/programming-the-iot/book-exercise-tasks/blob/default/FAQ.md).
 
- - The following template files are &copy; 2020 - 2024 by [Andrew D. King](https://andyking.me)</a> and licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0 <img height="24" style="!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img height="24" style="!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a>
-   - CDA-REQ-CHECKLIST.md
-   - GDA-REQ-CHECKLIST.md
-   - CSF-REQ-CHECKLIST.md
-   - README-CDA.md
-   - README-GDA.md
-   - README-CSF.md
-   - README-PROJECT-PROPOSAL.md
-   - README-PROJECT-FINAL.md
+# IMPORTANT NOTES
+This code base is under active development.
+
+If  any  code  samples  or  other  technology  this  work  contains, describes, and / or is  subject  to  open  source licenses  or  the  intellectual  property  rights  of  others,  it  is  your  responsibility  to  ensure  that  your  use thereof complies with such licenses and/or rights.
+
+# LICENSE
+Please see [LICENSE](https://github.com/programming-the-iot/java-components/blob/default/LICENSE) if you plan to use this code.
+
+Please refer to the referenced libraries for their respective licenses.
